@@ -12,38 +12,43 @@ export type PortfolioItem = {
   category: PortfolioCategory;
   description: string;
   thumbnail: string;
+  thumbnailFallback?: string;
   videoUrl: string;
   embedUrl?: string;
 };
 
 const yt = (id: string) => `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+const ytFallback = (id: string) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
 const ytEmbed = (id: string) => `https://www.youtube.com/embed/${id}`;
 
 export const portfolioItems: PortfolioItem[] = [
   {
     id: "p1",
-    title: "Telanthric — Featured Long Form",
+    title: "Alfie — Long Form Horror",
     category: "Long Form",
-    description: "Full-length Roblox commentary edit with paced storytelling, B-roll, and sound design.",
+    description: "Long-form horror edit with paced storytelling, atmospheric B-roll, and immersive sound design.",
     thumbnail: yt("P8us0eeWmQc"),
+    thumbnailFallback: ytFallback("P8us0eeWmQc"),
     videoUrl: "https://youtu.be/P8us0eeWmQc",
     embedUrl: ytEmbed("P8us0eeWmQc"),
   },
   {
     id: "p2",
-    title: "Telanthric — Long Form Edit",
-    category: "Long Form",
-    description: "Cinematic pacing with meme cuts, layered VFX, and crisp audio mixing.",
+    title: "Motion Graphics Preview",
+    category: "Shorts",
+    description: "Short-form motion graphics preview with layered VFX, kinetic type, and crisp audio mixing.",
     thumbnail: yt("GLiRqZuNOQg"),
+    thumbnailFallback: ytFallback("GLiRqZuNOQg"),
     videoUrl: "https://youtu.be/GLiRqZuNOQg",
     embedUrl: ytEmbed("GLiRqZuNOQg"),
   },
   {
     id: "p3",
-    title: "YouTube Short — Hook Edit",
+    title: "Cinematic Ronaldo Edit",
     category: "Shorts",
-    description: "Retention-engineered short with zoom punches and clean captions.",
+    description: "Cinematic Ronaldo short with smooth speed ramps, color grading, and beat-synced cuts.",
     thumbnail: yt("MIKEE186Ywc"),
+    thumbnailFallback: ytFallback("MIKEE186Ywc"),
     videoUrl: "https://www.youtube.com/shorts/MIKEE186Ywc",
     embedUrl: ytEmbed("MIKEE186Ywc"),
   },
@@ -53,42 +58,47 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Shorts",
     description: "Hook-first short with quick cuts, motion graphics, and SFX.",
     thumbnail: yt("x8fR685l_Ts"),
+    thumbnailFallback: ytFallback("x8fR685l_Ts"),
     videoUrl: "https://www.youtube.com/shorts/x8fR685l_Ts",
     embedUrl: ytEmbed("x8fR685l_Ts"),
   },
   {
     id: "p5",
-    title: "Gaming Commentary",
-    category: "Gaming",
-    description: "Punchy gaming edit with synced beats and layered overlays.",
+    title: "Cheezie — Short Form Meme Preview",
+    category: "Shorts",
+    description: "Meme-packed short form preview with punchy cuts, layered overlays, and beat-synced SFX.",
     thumbnail: yt("1IQKgQ1ABO4"),
+    thumbnailFallback: ytFallback("1IQKgQ1ABO4"),
     videoUrl: "https://youtu.be/1IQKgQ1ABO4",
     embedUrl: ytEmbed("1IQKgQ1ABO4"),
   },
   {
     id: "p6",
-    title: "Gaming Edit — Long Form",
+    title: "Telanthric — Gaming Long Form",
     category: "Gaming",
-    description: "Story-driven gaming video with cinematic color grade and B-roll.",
+    description: "Story-driven gaming video for Telanthric with cinematic color grade and B-roll.",
     thumbnail: yt("A1NDj0Pd2BA"),
+    thumbnailFallback: ytFallback("A1NDj0Pd2BA"),
     videoUrl: "https://www.youtube.com/watch?v=A1NDj0Pd2BA",
     embedUrl: ytEmbed("A1NDj0Pd2BA"),
   },
   {
     id: "p7",
-    title: "YouTube Long Form",
+    title: "Telanthric — YouTube Long Form",
     category: "Long Form",
-    description: "Smooth storytelling, audio cleanup, and pace-perfect cutting.",
+    description: "Long-form edit for Telanthric — smooth storytelling, audio cleanup, and pace-perfect cutting.",
     thumbnail: yt("dS1MHzSa_9E"),
+    thumbnailFallback: ytFallback("dS1MHzSa_9E"),
     videoUrl: "https://www.youtube.com/watch?v=dS1MHzSa_9E",
     embedUrl: ytEmbed("dS1MHzSa_9E"),
   },
   {
     id: "p8",
-    title: "Featured Commentary Edit",
+    title: "Telanthric — Featured Commentary",
     category: "YouTube",
-    description: "Long-form YouTube edit with chapter pacing and motion graphics.",
+    description: "Featured commentary edit for Telanthric with chapter pacing and motion graphics.",
     thumbnail: yt("LyTOTMbkJe8"),
+    thumbnailFallback: ytFallback("LyTOTMbkJe8"),
     videoUrl: "https://www.youtube.com/watch?v=LyTOTMbkJe8&t=332s",
     embedUrl: ytEmbed("LyTOTMbkJe8"),
   },

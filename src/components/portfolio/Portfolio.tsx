@@ -60,7 +60,17 @@ export function Portfolio() {
                 onClick={() => setModal(p.id)}
               >
                 <div className="aspect-video relative overflow-hidden">
-                  <img src={p.thumbnail} alt={p.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img
+                    src={p.thumbnail}
+                    alt={p.title}
+                    onError={(e) => {
+                      const img = e.currentTarget;
+                      if (p.thumbnailFallback && img.src !== p.thumbnailFallback) {
+                        img.src = p.thumbnailFallback;
+                      }
+                    }}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 40%, oklch(0 0 0 / 0.8))" }} />
                   <div className="absolute top-3 left-3">
                     <span className="glass rounded-full px-2.5 py-1 text-[10px] font-mono uppercase tracking-widest">{p.category}</span>
