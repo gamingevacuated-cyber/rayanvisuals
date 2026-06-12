@@ -14,6 +14,7 @@ import { FAQ } from "@/components/portfolio/FAQ";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { BackToTop, FloatingParticles, LoadingScreen, MouseGlow, ScrollProgress } from "@/components/portfolio/Effects";
+import { NoiseFilter, GridLines, WavePath, OrbitRings } from "@/components/portfolio/SvgOrnaments";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,9 +35,15 @@ function Home() {
       <ScrollProgress />
       <MouseGlow />
       <FloatingParticles />
+      <NoiseFilter />
+      <div aria-hidden className="pointer-events-none fixed inset-0 z-[1] opacity-40">
+        <GridLines />
+      </div>
+      <OrbitRings className="pointer-events-none fixed -right-40 top-1/4 z-[1] h-[600px] w-[600px] opacity-30" />
       <Nav />
       <main className="relative z-10">
         <Hero />
+        <div className="relative"><WavePath className="-mt-10 opacity-60" /></div>
         <Results />
         <About />
         <Skills />
