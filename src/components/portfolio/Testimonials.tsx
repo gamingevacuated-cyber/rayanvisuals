@@ -12,7 +12,7 @@ export function Testimonials() {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-3 gap-5">
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {testimonials.map((t, i) => (
             <Reveal key={t.id} delay={i * 0.1}>
               <div className="glass-strong rounded-3xl p-6 h-full flex flex-col">

@@ -1,4 +1,8 @@
 // Edit this file to add or update portfolio projects and testimonials.
+import telanthricPfp from "@/assets/telanthric.jpg.asset.json";
+import guhhreenPfp from "@/assets/guhhreen.jpg.asset.json";
+import aisarPfp from "@/assets/aisar.jpg.asset.json";
+import mannyPfp from "@/assets/manny.jpg.asset.json";
 
 export type PortfolioCategory = "Shorts" | "Gaming" | "Long Form" | "TikTok" | "Instagram" | "YouTube";
 
@@ -7,65 +11,86 @@ export type PortfolioItem = {
   title: string;
   category: PortfolioCategory;
   description: string;
-  thumbnail: string; // image url
-  videoUrl: string;  // YouTube / Vimeo / TikTok / Instagram / Drive link
-  embedUrl?: string; // optional override for iframe src
+  thumbnail: string;
+  videoUrl: string;
+  embedUrl?: string;
 };
+
+const yt = (id: string) => `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+const ytEmbed = (id: string) => `https://www.youtube.com/embed/${id}`;
 
 export const portfolioItems: PortfolioItem[] = [
   {
-    id: "1",
-    title: "Telanthric — Viral Gaming Montage",
-    category: "Gaming",
-    description: "High-retention Roblox montage with meme cuts, zoom punches, and sound design.",
-    thumbnail: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&q=80",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    id: "2",
-    title: "TikTok Trend Edit Pack",
-    category: "TikTok",
-    description: "Fast-paced trend-optimized edits with captions and motion graphics.",
-    thumbnail: "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=1200&q=80",
-    videoUrl: "#",
-    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    id: "3",
-    title: "YouTube Long-Form Commentary",
+    id: "p1",
+    title: "Telanthric — Featured Long Form",
     category: "Long Form",
-    description: "Smooth storytelling, audio cleanup, B-roll layering, and color grade.",
-    thumbnail: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&q=80",
-    videoUrl: "#",
-    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    description: "Full-length Roblox commentary edit with paced storytelling, B-roll, and sound design.",
+    thumbnail: yt("P8us0eeWmQc"),
+    videoUrl: "https://youtu.be/P8us0eeWmQc",
+    embedUrl: ytEmbed("P8us0eeWmQc"),
   },
   {
-    id: "4",
-    title: "Instagram Reel — Brand Drop",
-    category: "Instagram",
-    description: "Cinematic product reel with 3D elements and color grading.",
-    thumbnail: "https://images.unsplash.com/photo-1493612276216-ee3925520721?w=1200&q=80",
-    videoUrl: "#",
-    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    id: "p2",
+    title: "Telanthric — Long Form Edit",
+    category: "Long Form",
+    description: "Cinematic pacing with meme cuts, layered VFX, and crisp audio mixing.",
+    thumbnail: yt("GLiRqZuNOQg"),
+    videoUrl: "https://youtu.be/GLiRqZuNOQg",
+    embedUrl: ytEmbed("GLiRqZuNOQg"),
   },
   {
-    id: "5",
-    title: "YouTube Shorts — Retention Pack",
+    id: "p3",
+    title: "YouTube Short — Hook Edit",
     category: "Shorts",
-    description: "Hook-first edits engineered for full watch-through.",
-    thumbnail: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1200&q=80",
-    videoUrl: "#",
-    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    description: "Retention-engineered short with zoom punches and clean captions.",
+    thumbnail: yt("MIKEE186Ywc"),
+    videoUrl: "https://www.youtube.com/shorts/MIKEE186Ywc",
+    embedUrl: ytEmbed("MIKEE186Ywc"),
   },
   {
-    id: "6",
-    title: "Valorant Highlights",
+    id: "p4",
+    title: "YouTube Short — Trend Edit",
+    category: "Shorts",
+    description: "Hook-first short with quick cuts, motion graphics, and SFX.",
+    thumbnail: yt("x8fR685l_Ts"),
+    videoUrl: "https://www.youtube.com/shorts/x8fR685l_Ts",
+    embedUrl: ytEmbed("x8fR685l_Ts"),
+  },
+  {
+    id: "p5",
+    title: "Gaming Commentary",
     category: "Gaming",
-    description: "Synced highlight reel with VFX overlays and crisp sound design.",
-    thumbnail: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=1200&q=80",
-    videoUrl: "#",
-    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    description: "Punchy gaming edit with synced beats and layered overlays.",
+    thumbnail: yt("1IQKgQ1ABO4"),
+    videoUrl: "https://youtu.be/1IQKgQ1ABO4",
+    embedUrl: ytEmbed("1IQKgQ1ABO4"),
+  },
+  {
+    id: "p6",
+    title: "Gaming Edit — Long Form",
+    category: "Gaming",
+    description: "Story-driven gaming video with cinematic color grade and B-roll.",
+    thumbnail: yt("A1NDj0Pd2BA"),
+    videoUrl: "https://www.youtube.com/watch?v=A1NDj0Pd2BA",
+    embedUrl: ytEmbed("A1NDj0Pd2BA"),
+  },
+  {
+    id: "p7",
+    title: "YouTube Long Form",
+    category: "Long Form",
+    description: "Smooth storytelling, audio cleanup, and pace-perfect cutting.",
+    thumbnail: yt("dS1MHzSa_9E"),
+    videoUrl: "https://www.youtube.com/watch?v=dS1MHzSa_9E",
+    embedUrl: ytEmbed("dS1MHzSa_9E"),
+  },
+  {
+    id: "p8",
+    title: "Featured Commentary Edit",
+    category: "YouTube",
+    description: "Long-form YouTube edit with chapter pacing and motion graphics.",
+    thumbnail: yt("LyTOTMbkJe8"),
+    videoUrl: "https://www.youtube.com/watch?v=LyTOTMbkJe8&t=332s",
+    embedUrl: ytEmbed("LyTOTMbkJe8"),
   },
 ];
 
@@ -80,27 +105,35 @@ export type Testimonial = {
 
 export const testimonials: Testimonial[] = [
   {
-    id: "1",
+    id: "t1",
     name: "Telanthric",
-    role: "YouTube Creator",
-    photo: "https://i.pravatar.cc/120?img=12",
-    review: "Rayan's edits hit different. Retention went up the second we started working together — every cut feels intentional.",
+    role: "YouTube Creator • 2.1M+ subs",
+    photo: telanthricPfp.url,
+    review: "Clean, simple editing that just works — and he always delivers on time.",
     rating: 5,
   },
   {
-    id: "2",
-    name: "Alex M.",
-    role: "TikTok Creator",
-    photo: "https://i.pravatar.cc/120?img=33",
-    review: "Fastest turnarounds I've had from any editor. Communication is clean and the edits are sharp.",
+    id: "t2",
+    name: "Guhhreen",
+    role: "YouTube Creator • 21.5K+ subs",
+    photo: guhhreenPfp.url,
+    review: "Genuine guy, always delivers on time, and the edits look really sharp.",
     rating: 5,
   },
   {
-    id: "3",
-    name: "Jordan R.",
-    role: "Gaming Streamer",
-    photo: "https://i.pravatar.cc/120?img=15",
-    review: "Funny, punchy, perfectly paced. He understands gaming content better than 90% of editors I've worked with.",
+    id: "t3",
+    name: "Aisarredux",
+    role: "Head Developer at Roblox Ink Games • 2.8K+ subs",
+    photo: aisarPfp.url,
+    review: "Awesome editing — quality was so good I ended up paying more than we originally agreed on.",
+    rating: 5,
+  },
+  {
+    id: "t4",
+    name: "Mannyfilms",
+    role: "YouTube Creator • 100K+ subs",
+    photo: mannyPfp.url,
+    review: "Awesome quality — the edits feel smooth and genuinely enjoyable to watch.",
     rating: 5,
   },
 ];
