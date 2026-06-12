@@ -1,4 +1,5 @@
 import { Reveal, SectionTag } from "./primitives";
+import rayanPfp from "@/assets/rayan.jpg.asset.json";
 
 const expertise = [
   "Gaming Videos",
@@ -18,17 +19,17 @@ export function About() {
             <h2 className="mt-4 font-display text-5xl sm:text-6xl lg:text-7xl">
               Who <em className="italic text-aurora">am I?</em>
             </h2>
-            <div className="mt-8 glass-strong rounded-3xl p-2 overflow-hidden">
-              <div className="aspect-square rounded-2xl relative overflow-hidden" style={{ background: "linear-gradient(135deg, oklch(0.25 0.1 295), oklch(0.2 0.08 220))" }}>
-                <div className="absolute inset-0 grid place-items-center">
-                  <span className="font-display text-[14rem] leading-none text-aurora opacity-90">R</span>
-                </div>
+            <div className="mt-8 glass-strong rounded-3xl p-2 overflow-hidden relative">
+              <div className="aspect-square rounded-2xl relative overflow-hidden">
+                <img src={rayanPfp.url} alt="Rayan — Video Editor" className="absolute inset-0 h-full w-full object-cover" />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 45%, oklch(0 0 0 / 0.7))" }} />
+                <div className="absolute top-4 right-4 glass rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-widest">Online</div>
                 <div className="absolute bottom-4 left-4 right-4 glass rounded-2xl p-4 flex items-center justify-between">
                   <div>
                     <div className="font-medium">Rayan</div>
                     <div className="text-xs text-muted-foreground">Video Editor • Freelance</div>
                   </div>
-                  <div className="font-mono text-xs text-muted-foreground">7+ YRS</div>
+                  <div className="font-mono text-xs text-aurora">7+ YRS</div>
                 </div>
               </div>
             </div>
