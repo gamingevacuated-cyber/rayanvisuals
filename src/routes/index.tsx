@@ -16,6 +16,14 @@ import { Footer } from "@/components/portfolio/Footer";
 import { BackToTop, FloatingParticles, LoadingScreen, MouseGlow, ScrollProgress } from "@/components/portfolio/Effects";
 import { NoiseFilter, GridLines, WavePath, OrbitRings } from "@/components/portfolio/SvgOrnaments";
 
+const faqs = [
+  { q: "What software do you use?", a: "Premiere Pro and After Effects." },
+  { q: "Do you edit long-form content?", a: "Yes." },
+  { q: "Can pricing be negotiated?", a: "Yes, depending on project scope." },
+  { q: "How long does delivery take?", a: "Depends on project complexity." },
+  { q: "Do you offer revisions?", a: "Yes, revisions are included, with extra revisions charged separately." },
+];
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -23,6 +31,32 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Premium video editing for gaming creators, shorts, reels, and long-form. Premiere Pro & After Effects. Millions of views generated." },
       { property: "og:title", content: "Rayan — Professional Video Editor" },
       { property: "og:description", content: "Turning raw footage into content people actually watch. 7+ years experience." },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Rayan",
+          alternateName: "Nanex",
+          jobTitle: "Professional Video Editor",
+          url: "https://nanex-portfolio.lovable.app",
+          sameAs: ["https://www.youtube.com/@nanexaep"],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
     ],
   }),
   component: Home,
