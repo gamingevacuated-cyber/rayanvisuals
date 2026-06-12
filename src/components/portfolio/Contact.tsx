@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Reveal, SectionTag } from "./primitives";
+import { DiscordCard } from "./DiscordCard";
 
-const DISCORD = "@979589726250074152";
-const DISCORD_URL = "https://discord.com/users/979589726250074152";
 const YOUTUBE_URL = "https://www.youtube.com/@nanexaep";
 
 export function Contact() {
@@ -54,21 +53,7 @@ export function Contact() {
 
           <Reveal delay={0.1}>
             <div className="space-y-4 h-full flex flex-col">
-              <div className="glass-strong rounded-3xl p-6 relative overflow-hidden flex-1">
-                <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full opacity-50" style={{ background: "radial-gradient(circle, #5865F2, transparent 70%)" }} />
-                <div className="relative">
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Discord — fastest reply</div>
-                  <div className="mt-2 font-display text-xl break-all">{DISCORD}</div>
-                  <a
-                    href={DISCORD_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary mt-4 inline-flex items-center gap-2 text-sm"
-                  >
-                    Open Discord ↗
-                  </a>
-                </div>
-              </div>
+              <DiscordCard />
 
               <div className="glass rounded-3xl p-6">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">Find me online</div>
