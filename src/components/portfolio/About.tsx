@@ -1,5 +1,4 @@
 import { Reveal, SectionTag } from "./primitives";
-import rayanPfp from "@/assets/rayan.jpg.asset.json";
 
 const expertise = [
   "Gaming Videos",
@@ -19,17 +18,27 @@ export function About() {
             <h2 className="mt-4 font-display text-5xl sm:text-6xl lg:text-7xl">
               Who <em className="italic text-aurora">am I?</em>
             </h2>
-            <div className="mt-8 glass-strong rounded-3xl p-2 overflow-hidden relative">
-              <div className="aspect-square rounded-2xl relative overflow-hidden">
-                <img src={rayanPfp.url} alt="Rayan — Video Editor" className="absolute inset-0 h-full w-full object-cover" />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 45%, oklch(0 0 0 / 0.7))" }} />
-                <div className="absolute top-4 right-4 glass rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-widest">Online</div>
-                <div className="absolute bottom-4 left-4 right-4 glass rounded-2xl p-4 flex items-center justify-between">
-                  <div>
-                    <div className="font-medium">Rayan</div>
-                    <div className="text-xs text-muted-foreground">Video Editor • Freelance</div>
+            <div className="mt-8 glass-strong rounded-3xl p-6 relative overflow-hidden">
+              <div className="absolute -top-20 -right-20 h-56 w-56 rounded-full opacity-40" style={{ background: "var(--gradient-aurora)" }} />
+              <div className="relative">
+                <div className="flex items-center justify-between">
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Status</div>
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="font-mono text-[10px] uppercase tracking-widest">Available</span>
                   </div>
-                  <div className="font-mono text-xs text-aurora">7+ YRS</div>
+                </div>
+                <div className="mt-6 font-display text-4xl">Rayan</div>
+                <div className="mt-1 text-sm text-muted-foreground">Video Editor • Freelance</div>
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  <div className="glass rounded-2xl p-4">
+                    <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Experience</div>
+                    <div className="mt-1 font-display text-2xl text-aurora">7+ YRS</div>
+                  </div>
+                  <div className="glass rounded-2xl p-4">
+                    <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Specialty</div>
+                    <div className="mt-1 font-display text-lg">Short-form</div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Reveal, SectionTag } from "./primitives";
 
 const DISCORD = "@979589726250074152";
+const DISCORD_URL = "https://discord.com/users/979589726250074152";
+const YOUTUBE_URL = "https://www.youtube.com/@nanexaep";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
@@ -52,40 +54,35 @@ export function Contact() {
 
           <Reveal delay={0.1}>
             <div className="space-y-4 h-full flex flex-col">
-              <div className="glass-strong rounded-3xl p-6 relative overflow-hidden">
+              <div className="glass-strong rounded-3xl p-6 relative overflow-hidden flex-1">
                 <div className="absolute -top-16 -right-16 h-40 w-40 rounded-full opacity-50" style={{ background: "radial-gradient(circle, #5865F2, transparent 70%)" }} />
                 <div className="relative">
                   <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Discord — fastest reply</div>
                   <div className="mt-2 font-display text-xl break-all">{DISCORD}</div>
-                  <button
-                    onClick={() => navigator.clipboard?.writeText(DISCORD)}
-                    className="btn-glass mt-4 text-sm inline-flex items-center gap-2"
+                  <a
+                    href={DISCORD_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary mt-4 inline-flex items-center gap-2 text-sm"
                   >
-                    Copy Discord ID
-                  </button>
+                    Open Discord ↗
+                  </a>
                 </div>
-              </div>
-
-              <div className="glass-strong rounded-3xl p-6 flex-1">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Direct hire</div>
-                <p className="mt-2 text-sm text-muted-foreground">Ready to start? Skip the chat and lock in a project slot.</p>
-                <a href={`https://discord.com/users/979589726250074152`} target="_blank" rel="noopener noreferrer" className="btn-primary mt-4 inline-flex text-sm">Hire Me Now</a>
               </div>
 
               <div className="glass rounded-3xl p-6">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">Find me online</div>
-                <div className="flex gap-2">
-                  {[
-                    { label: "YT", href: "#" },
-                    { label: "TT", href: "#" },
-                    { label: "IG", href: "#" },
-                    { label: "X", href: "#" },
-                  ].map((s) => (
-                    <a key={s.label} href={s.href} className="grid h-11 w-11 place-items-center rounded-full glass hover:glass-strong transition font-mono text-xs">
-                      {s.label}
-                    </a>
-                  ))}
-                </div>
+                <a
+                  href={YOUTUBE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-glass inline-flex items-center gap-3 text-sm"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2C0 8 0 12 0 12s0 4 .5 5.8a3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/>
+                  </svg>
+                  YouTube — @nanexaep
+                </a>
               </div>
             </div>
           </Reveal>
