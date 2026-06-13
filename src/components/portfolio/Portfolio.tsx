@@ -52,12 +52,14 @@ export function Portfolio() {
               <motion.div
                 layout
                 key={p.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
                 className="glass-strong rounded-3xl overflow-hidden group cursor-pointer"
                 onClick={() => setModal(p.id)}
+                onMouseEnter={() => setHovered(p.id)}
+                onMouseLeave={() => setHovered((h) => (h === p.id ? null : h))}
               >
                 <div className="aspect-video relative overflow-hidden">
                   <img
@@ -73,11 +75,19 @@ export function Portfolio() {
                     }}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 40%, oklch(0 0 0 / 0.8))" }} />
+                  {hovered === p.id && p.embedUrl && (
+                    <iframe
+                      src={`${p.embedUrl}?autoplay=1&mute=1&controls=0&loop=1&playlist=${p.embedUrl.split("/").pop()}&modestbranding=1&playsinline=1`}
+                      title={p.title}
+                      className="absolute inset-0 h-full w-full pointer-events-none"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                    />
+                  )}
+                  <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg, transparent 40%, oklch(0 0 0 / 0.8))" }} />
                   <div className="absolute top-3 left-3">
-                    <span className="glass rounded-full px-2.5 py-1 text-[10px] font-mono uppercase tracking-widest">{p.category}</span>
+                    <span className="glass rounded-full px-2.5 py-1 text-[10px] font-mono uppercase tracking-widest font-light">{p.category}</span>
                   </div>
-                  <div className="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute inset-0 grid place-items-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                     <div className="glass-strong rounded-full h-14 w-14 grid place-items-center">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -85,10 +95,10 @@ export function Portfolio() {
                 </div>
                 <div className="p-5">
                   <h3 className="font-display text-xl">{p.title}</h3>
-                  <p className="mt-1.5 text-sm text-muted-foreground line-clamp-2">{p.description}</p>
+                  <p className="mt-1.5 text-sm text-muted-foreground line-clamp-2 font-light">{p.description}</p>
                   <div className="mt-4 flex items-center justify-between">
-                    <span className="text-xs text-muted-foreground">View project</span>
-                    <span className="text-aurora text-sm">→</span>
+                    <span className="text-xs text-muted-foreground font-light">View project</span>
+                    <span className="text-brand text-sm">→</span>
                   </div>
                 </div>
               </motion.div>
