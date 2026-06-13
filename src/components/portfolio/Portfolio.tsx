@@ -8,6 +8,7 @@ const filters: ("All" | PortfolioCategory)[] = ["All", "Shorts", "Gaming", "Long
 export function Portfolio() {
   const [active, setActive] = useState<(typeof filters)[number]>("All");
   const [modal, setModal] = useState<string | null>(null);
+  const [hovered, setHovered] = useState<string | null>(null);
 
   const filtered = useMemo(
     () => active === "All" ? portfolioItems : portfolioItems.filter((p) => p.category === active),
