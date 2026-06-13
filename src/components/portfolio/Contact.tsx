@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Reveal, SectionTag } from "./primitives";
 import { DiscordCard } from "./DiscordCard";
+import { PayPalCard } from "./PayPalCard";
 
 const YOUTUBE_URL = "https://www.youtube.com/@nanexaep";
 
