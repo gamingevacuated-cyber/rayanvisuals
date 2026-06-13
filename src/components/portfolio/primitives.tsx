@@ -41,7 +41,7 @@ export function Counter({ to, suffix = "", duration = 2000 }: { to: number; suff
   return <span ref={ref}>{value.toLocaleString()}{suffix}</span>;
 }
 
-export function Reveal({ children, delay = 0, y = 30 }: { children: React.ReactNode; delay?: number; y?: number }) {
+export function Reveal({ children, delay = 0, y = 40 }: { children: React.ReactNode; delay?: number; y?: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y }}
