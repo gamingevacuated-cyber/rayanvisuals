@@ -68,6 +68,8 @@
   --blue: oklch(0.7 0.2 250);
   --cyan: oklch(0.82 0.16 200);
   --ember: oklch(0.68 0.24 25);
+  --brand: #3B82F6;
+  --brand-glow: rgba(59, 130, 246, 0.55);
 
   --gradient-aurora: linear-gradient(135deg, oklch(0.72 0.22 295) 0%, oklch(0.7 0.2 250) 50%, oklch(0.82 0.16 200) 100%);
   --gradient-ember: linear-gradient(135deg, oklch(0.72 0.22 295) 0%, oklch(0.68 0.24 25) 100%);
@@ -99,8 +101,13 @@
     background: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 300;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+  }
+
+  @media (pointer: fine) {
+    html, body, a, button { cursor: none; }
   }
 
   body {
@@ -119,9 +126,15 @@
 
   h1, h2, h3 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+  }
+
+  .label, .font-mono.uppercase {
+    font-weight: 200;
   }
 }
+
 
 @utility glass {
   background: var(--gradient-glass);
@@ -169,16 +182,25 @@
 }
 
 @utility btn-primary {
-  background: var(--gradient-aurora);
-  color: oklch(0.13 0.025 280);
+  background: var(--brand);
+  color: white;
   font-weight: 600;
   border-radius: 9999px;
   padding: 0.85rem 1.75rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  box-shadow: 0 8px 24px -8px var(--brand-glow);
   &:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-glow-violet);
+    box-shadow: 0 14px 40px -8px var(--brand-glow);
+    background: #2563eb;
   }
+}
+
+@utility text-brand {
+  color: var(--brand);
+}
+@utility bg-brand {
+  background: var(--brand);
 }
 
 @utility btn-glass {

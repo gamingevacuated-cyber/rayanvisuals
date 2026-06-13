@@ -14,6 +14,7 @@ import { FAQ } from "@/components/portfolio/FAQ";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { BackToTop, FloatingParticles, LoadingScreen, MouseGlow, ScrollProgress } from "@/components/portfolio/Effects";
+import { CustomCursor } from "@/components/portfolio/Cursor";
 import { NoiseFilter, GridLines, WavePath, OrbitRings } from "@/components/portfolio/SvgOrnaments";
 
 const faqs = [
@@ -68,6 +69,7 @@ function Home() {
       <LoadingScreen />
       <ScrollProgress />
       <MouseGlow />
+      <CustomCursor />
       <FloatingParticles />
       <NoiseFilter />
       <div aria-hidden className="pointer-events-none fixed inset-0 z-[1] opacity-40">

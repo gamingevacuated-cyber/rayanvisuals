@@ -2,8 +2,23 @@ import { Counter } from "./primitives";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen pt-32 pb-20 px-4">
+    <section id="home" className="relative min-h-screen pt-32 pb-20 px-4 overflow-hidden">
+      <div aria-hidden className="absolute inset-0 -z-10">
+        <video
+          className="h-full w-full object-cover opacity-25"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1920&q=60"
+        >
+          <source src="https://cdn.pixabay.com/video/2020/09/08/49375-459421068_large.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.13 0.025 280 / 0.4) 0%, oklch(0.13 0.025 280 / 0.7) 60%, var(--background) 100%)" }} />
+      </div>
       <div className="mx-auto max-w-7xl">
+
         <span className="animate-fade-up inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs uppercase tracking-widest text-muted-foreground" style={{ animationDelay: "0ms" }}>
           <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
           Available for new projects
@@ -12,7 +27,7 @@ export function Hero() {
         <div className="mt-8 grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center">
           <div>
             <h1 className="animate-fade-up text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display leading-[0.95]" style={{ animationDelay: "150ms" }}>
-              Turning <em className="italic text-aurora">raw footage</em> into content people actually <span className="text-ember">watch</span>
+              Turning raw footage into content people actually <span className="text-brand italic">watch</span>
             </h1>
 
             <p className="animate-fade-up mt-6 font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-muted-foreground" style={{ animationDelay: "300ms" }}>
