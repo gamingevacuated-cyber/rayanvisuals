@@ -69,6 +69,7 @@ function Home() {
       <LoadingScreen />
       <ScrollProgress />
       <MouseGlow />
+      <CustomCursor />
       <FloatingParticles />
       <NoiseFilter />
       <div aria-hidden className="pointer-events-none fixed inset-0 z-[1] opacity-40">
