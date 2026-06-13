@@ -99,8 +99,13 @@
     background: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 300;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+  }
+
+  @media (pointer: fine) {
+    html, body, a, button { cursor: none; }
   }
 
   body {
@@ -119,9 +124,15 @@
 
   h1, h2, h3 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+  }
+
+  .label, .font-mono.uppercase {
+    font-weight: 200;
   }
 }
+
 
 @utility glass {
   background: var(--gradient-glass);
