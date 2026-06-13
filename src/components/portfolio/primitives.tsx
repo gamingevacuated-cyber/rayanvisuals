@@ -6,11 +6,17 @@ export function useInView<T extends HTMLElement>() {
   const [inView, setInView] = useState(false);
   useEffect(() => {
     if (!ref.current) return;
+    const el = ref.current;
     const obs = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setInView(true),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          obs.disconnect();
+        }
+      },
       { threshold: 0.2 }
     );
-    obs.observe(ref.current);
+    obs.observe(el);
     return () => obs.disconnect();
   }, []);
   return { ref, inView };
