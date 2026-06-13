@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Reveal, SectionTag } from "./primitives";
 import { DiscordCard } from "./DiscordCard";
+import { PayPalCard } from "./PayPalCard";
 
 const YOUTUBE_URL = "https://www.youtube.com/@nanexaep";
 
@@ -54,6 +55,7 @@ export function Contact() {
           <Reveal delay={0.1}>
             <div className="space-y-4 h-full flex flex-col">
               <DiscordCard />
+              <PayPalCard />
 
               <div className="glass rounded-3xl p-6">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-3">Find me online</div>
