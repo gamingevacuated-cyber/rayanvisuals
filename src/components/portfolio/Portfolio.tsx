@@ -63,6 +63,8 @@ export function Portfolio() {
                   <img
                     src={p.thumbnail}
                     alt={p.title}
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       const img = e.currentTarget;
                       if (p.thumbnailFallback && img.src !== p.thumbnailFallback) {
