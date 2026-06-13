@@ -48,16 +48,22 @@ export function Nav() {
         </a>
 
         <ul className="hidden lg:flex items-center gap-1">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="rounded-full px-3 py-1.5 text-sm text-muted-foreground transition hover:bg-white/5 hover:text-foreground"
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
+          {links.map((l) => {
+            const isActive = active === l.href;
+            return (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className={`rounded-full px-3 py-1.5 text-sm font-light transition hover:bg-white/5 ${
+                    isActive ? "text-brand" : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  style={isActive ? { background: "rgba(59,130,246,0.1)" } : undefined}
+                >
+                  {l.label}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <a href="#contact" className="btn-primary hidden sm:inline-flex text-sm !py-2 !px-4">Hire Me</a>
