@@ -27,7 +27,7 @@ export function Hero() {
         <div className="mt-8 grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center">
           <div>
             <h1 className="animate-fade-up text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display leading-[0.95]" style={{ animationDelay: "150ms" }}>
-              Turning <em className="italic text-aurora">raw footage</em> into content people actually <span className="text-ember">watch</span>
+              Turning raw footage into content people actually <span className="text-brand italic">watch</span>
             </h1>
 
             <p className="animate-fade-up mt-6 font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-muted-foreground" style={{ animationDelay: "300ms" }}>
