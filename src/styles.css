@@ -68,6 +68,8 @@
   --blue: oklch(0.7 0.2 250);
   --cyan: oklch(0.82 0.16 200);
   --ember: oklch(0.68 0.24 25);
+  --brand: #3B82F6;
+  --brand-glow: rgba(59, 130, 246, 0.55);
 
   --gradient-aurora: linear-gradient(135deg, oklch(0.72 0.22 295) 0%, oklch(0.7 0.2 250) 50%, oklch(0.82 0.16 200) 100%);
   --gradient-ember: linear-gradient(135deg, oklch(0.72 0.22 295) 0%, oklch(0.68 0.24 25) 100%);
