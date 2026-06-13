@@ -182,16 +182,25 @@
 }
 
 @utility btn-primary {
-  background: var(--gradient-aurora);
-  color: oklch(0.13 0.025 280);
+  background: var(--brand);
+  color: white;
   font-weight: 600;
   border-radius: 9999px;
   padding: 0.85rem 1.75rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  box-shadow: 0 8px 24px -8px var(--brand-glow);
   &:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-glow-violet);
+    box-shadow: 0 14px 40px -8px var(--brand-glow);
+    background: #2563eb;
   }
+}
+
+@utility text-brand {
+  color: var(--brand);
+}
+@utility bg-brand {
+  background: var(--brand);
 }
 
 @utility btn-glass {
