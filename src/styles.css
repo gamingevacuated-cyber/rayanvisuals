@@ -191,7 +191,7 @@
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 40px -8px var(--brand-glow);
-    background: #2563eb;
+    background: #9333ea;
   }
 }
 
