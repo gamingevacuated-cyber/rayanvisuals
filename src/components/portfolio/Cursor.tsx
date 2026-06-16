@@ -1,17 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
-  const [hovering, setHovering] = useState(false);
-  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
     if (!window.matchMedia("(pointer: fine)").matches) return;
-    setEnabled(true);
+    if (window.matchMedia("(max-width: 767px)").matches) return;
 
     let raf = 0;
     let tx = 0, ty = 0, rx = 0, ry = 0;
+    let hovering = false;
 
     const onMove = (e: MouseEvent) => {
       tx = e.clientX;
@@ -19,9 +18,17 @@ export function CustomCursor() {
       if (dotRef.current) {
         dotRef.current.style.transform = `translate3d(${tx - 4}px, ${ty - 4}px, 0)`;
       }
+    };
+
+    const onOver = (e: MouseEvent) => {
       const el = e.target as HTMLElement | null;
-      const interactive = !!el?.closest("a,button,[role=button],input,textarea,label,select,.cursor-pointer");
-      setHovering(interactive);
+      const next = !!el?.closest("a,button,[role=button],input,textarea,label,select,.cursor-pointer");
+      if (next !== hovering) {
+        hovering = next;
+        if (ringRef.current) {
+          ringRef.current.dataset.hover = next ? "1" : "0";
+        }
+      }
     };
 
     const tick = () => {
@@ -34,13 +41,15 @@ export function CustomCursor() {
     };
     raf = requestAnimationFrame(tick);
     window.addEventListener("mousemove", onMove, { passive: true });
+    window.addEventListener("mouseover", onOver, { passive: true });
+    if (dotRef.current) dotRef.current.style.display = "block";
+    if (ringRef.current) ringRef.current.style.display = "block";
     return () => {
       window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseover", onOver);
       cancelAnimationFrame(raf);
     };
   }, []);
-
-  if (!enabled) return null;
 
   return (
     <>
@@ -49,24 +58,33 @@ export function CustomCursor() {
         aria-hidden
         className="pointer-events-none fixed left-0 top-0 z-[200] h-2 w-2 rounded-full"
         style={{
+          display: "none",
           background: "#3B82F6",
           boxShadow: "0 0 14px rgba(59,130,246,0.9), 0 0 28px rgba(59,130,246,0.5)",
+          willChange: "transform",
         }}
       />
       <div
         ref={ringRef}
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-[199] rounded-full transition-[width,height,border-color,background] duration-200 ease-out"
+        data-hover="0"
+        className="cursor-ring pointer-events-none fixed left-0 top-0 z-[199] rounded-full"
         style={{
-          width: hovering ? 56 : 36,
-          height: hovering ? 56 : 36,
-          marginLeft: hovering ? -10 : 0,
-          marginTop: hovering ? -10 : 0,
+          display: "none",
+          width: 36,
+          height: 36,
           border: "1.5px solid rgba(59,130,246,0.6)",
-          background: hovering ? "rgba(59,130,246,0.12)" : "transparent",
-          backdropFilter: hovering ? "blur(2px)" : undefined,
+          willChange: "transform",
+          transition: "width 0.2s ease, height 0.2s ease, background 0.2s ease",
         }}
       />
+      <style>{`
+        .cursor-ring[data-hover="1"] {
+          width: 56px !important;
+          height: 56px !important;
+          background: rgba(59,130,246,0.12);
+        }
+      `}</style>
     </>
   );
 }

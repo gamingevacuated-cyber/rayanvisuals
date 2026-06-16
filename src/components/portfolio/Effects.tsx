@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring } from "motion/react";
 
 export function ScrollProgress() {
@@ -6,7 +6,7 @@ export function ScrollProgress() {
   const scaleX = useSpring(scrollYProgress, { stiffness: 200, damping: 30 });
   return (
     <motion.div
-      style={{ scaleX, transformOrigin: "0% 50%" }}
+      style={{ scaleX, transformOrigin: "0% 50%", willChange: "transform" }}
       className="fixed top-0 left-0 right-0 z-[60] h-[2px]"
     >
       <div className="h-full w-full" style={{ background: "var(--gradient-aurora)" }} />
@@ -15,26 +15,47 @@ export function ScrollProgress() {
 }
 
 export function MouseGlow() {
-  const [pos, setPos] = useState({ x: -500, y: -500 });
+  const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const handler = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
-    window.addEventListener("mousemove", handler);
-    return () => window.removeEventListener("mousemove", handler);
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    let x = -500, y = -500, raf = 0, pending = false;
+    const apply = () => {
+      pending = false;
+      if (ref.current) {
+        ref.current.style.background = `radial-gradient(600px circle at ${x}px ${y}px, oklch(0.72 0.22 295 / 0.12), transparent 50%)`;
+      }
+    };
+    const onMove = (e: MouseEvent) => {
+      x = e.clientX; y = e.clientY;
+      if (!pending) {
+        pending = true;
+        raf = requestAnimationFrame(apply);
+      }
+    };
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(raf);
+    };
   }, []);
   return (
     <div
+      ref={ref}
       aria-hidden
       className="pointer-events-none fixed inset-0 z-[1] hidden md:block"
-      style={{
-        background: `radial-gradient(600px circle at ${pos.x}px ${pos.y}px, oklch(0.72 0.22 295 / 0.12), transparent 50%)`,
-        transition: "background 0.1s ease-out",
-      }}
+      style={{ willChange: "background" }}
     />
   );
 }
 
 export function FloatingParticles() {
-  const particles = Array.from({ length: 18 });
+  const [enabled, setEnabled] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px) and (prefers-reduced-motion: no-preference)");
+    setEnabled(mq.matches);
+  }, []);
+  if (!enabled) return null;
+  const particles = Array.from({ length: 8 });
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 z-[1] overflow-hidden">
       {particles.map((_, i) => {
@@ -54,6 +75,7 @@ export function FloatingParticles() {
               background: i % 3 === 0 ? "var(--cyan)" : i % 3 === 1 ? "var(--violet)" : "var(--blue)",
               boxShadow: "0 0 12px currentColor",
               opacity: 0.4,
+              willChange: "transform, opacity",
             }}
             animate={{ y: [0, -40, 0], opacity: [0.2, 0.6, 0.2] }}
             transition={{ duration: 8 + (i % 5), repeat: Infinity, delay, ease: "easeInOut" }}

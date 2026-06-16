@@ -72,10 +72,10 @@ function Home() {
       <CustomCursor />
       <FloatingParticles />
       <NoiseFilter />
-      <div aria-hidden className="pointer-events-none fixed inset-0 z-[1] opacity-40">
+      <div aria-hidden className="pointer-events-none fixed inset-0 z-[1] opacity-40 hidden md:block">
         <GridLines />
       </div>
-      <OrbitRings className="pointer-events-none fixed -right-40 top-1/4 z-[1] h-[600px] w-[600px] opacity-30" />
+      <OrbitRings className="pointer-events-none fixed -right-40 top-1/4 z-[1] h-[600px] w-[600px] opacity-30 hidden md:block" />
       <Nav />
       <main className="relative z-10">
         <Hero />
