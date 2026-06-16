@@ -23,6 +23,26 @@ const ytEmbed = (id: string) => `https://www.youtube.com/embed/${id}`;
 
 export const portfolioItems: PortfolioItem[] = [
   {
+    id: "p0a",
+    title: "Project Preview",
+    category: "YouTube",
+    description: "Recent edit — click to watch.",
+    thumbnail: yt("Ys8M6tzAzwg"),
+    thumbnailFallback: ytFallback("Ys8M6tzAzwg"),
+    videoUrl: "https://youtu.be/Ys8M6tzAzwg",
+    embedUrl: ytEmbed("Ys8M6tzAzwg"),
+  },
+  {
+    id: "p0b",
+    title: "Project Preview",
+    category: "YouTube",
+    description: "Recent edit — click to watch.",
+    thumbnail: yt("a6fPUpWDQRc"),
+    thumbnailFallback: ytFallback("a6fPUpWDQRc"),
+    videoUrl: "https://youtu.be/a6fPUpWDQRc",
+    embedUrl: ytEmbed("a6fPUpWDQRc"),
+  },
+  {
     id: "p1",
     title: "Alfie — Long Form Horror",
     category: "Long Form",
