@@ -135,26 +135,26 @@
 
 
 @utility glass {
-  background: var(--gradient-glass);
-  backdrop-filter: blur(28px) saturate(200%);
-  border: 1px solid oklch(1 0 0 / 0.14);
+  background: oklch(0.16 0.025 285 / 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid oklch(1 0 0 / 0.1);
   box-shadow: var(--shadow-glass);
   position: relative;
 }
 
 @utility glass-strong {
-  background: var(--gradient-glass-strong);
-  backdrop-filter: blur(40px) saturate(220%);
-  border: 1px solid oklch(1 0 0 / 0.18);
+  background: oklch(0.18 0.03 285 / 0.78);
+  backdrop-filter: blur(14px);
+  border: 1px solid oklch(1 0 0 / 0.14);
   box-shadow: var(--shadow-glass-strong);
   position: relative;
 }
 
 @utility glass-nav {
-  background: oklch(0.13 0.025 280 / 0.55);
-  backdrop-filter: blur(32px) saturate(200%);
-  border: 1px solid oklch(1 0 0 / 0.12);
-  box-shadow: 0 8px 32px -8px oklch(0 0 0 / 0.5), inset 0 1px 0 0 oklch(1 0 0 / 0.15);
+  background: oklch(0.11 0.025 280 / 0.82);
+  backdrop-filter: blur(12px);
+  border: 1px solid oklch(1 0 0 / 0.1);
+  box-shadow: 0 8px 32px -8px oklch(0 0 0 / 0.5), inset 0 1px 0 0 oklch(1 0 0 / 0.12);
 }
 
 @utility text-aurora {
@@ -185,11 +185,10 @@
   font-weight: 600;
   border-radius: 9999px;
   padding: 0.85rem 1.75rem;
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  transition: transform 0.2s, background 0.2s;
   box-shadow: 0 8px 24px -8px var(--brand-glow);
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 40px -8px var(--brand-glow);
     background: #9333ea;
   }
 }
@@ -202,19 +201,19 @@
 }
 
 @utility btn-glass {
-  background: oklch(1 0 0 / 0.06);
-  backdrop-filter: blur(20px);
+  background: oklch(1 0 0 / 0.08);
   border: 1px solid oklch(1 0 0 / 0.15);
   color: var(--color-foreground);
   font-weight: 500;
   border-radius: 9999px;
   padding: 0.85rem 1.75rem;
-  transition: all 0.3s;
+  transition: background 0.2s, border-color 0.2s;
   &:hover {
-    background: oklch(1 0 0 / 0.12);
+    background: oklch(1 0 0 / 0.14);
     border-color: oklch(1 0 0 / 0.25);
   }
 }
+
 
 @keyframes float-slow {
   0%, 100% { transform: translateY(0) translateX(0); }
