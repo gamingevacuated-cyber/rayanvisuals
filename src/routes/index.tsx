@@ -14,9 +14,10 @@ import { Testimonials } from "@/components/portfolio/Testimonials";
 import { FAQ } from "@/components/portfolio/FAQ";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
-import { BackToTop, FloatingParticles, LoadingScreen, MouseGlow, ScrollProgress } from "@/components/portfolio/Effects";
+import { BackToTop, LoadingScreen, ScrollProgress } from "@/components/portfolio/Effects";
 import { CustomCursor } from "@/components/portfolio/Cursor";
-import { NoiseFilter, GridLines, WavePath, OrbitRings } from "@/components/portfolio/SvgOrnaments";
+import { NoiseFilter, WavePath } from "@/components/portfolio/SvgOrnaments";
+
 
 const faqs = [
   { q: "What software do you use?", a: "Premiere Pro and After Effects." },
@@ -69,15 +70,10 @@ function Home() {
     <div className="relative">
       <LoadingScreen />
       <ScrollProgress />
-      <MouseGlow />
       <CustomCursor />
-      <FloatingParticles />
       <NoiseFilter />
-      <div aria-hidden className="pointer-events-none fixed inset-0 z-[1] opacity-40 hidden md:block">
-        <GridLines />
-      </div>
-      <OrbitRings className="pointer-events-none fixed -right-40 top-1/4 z-[1] h-[600px] w-[600px] opacity-30 hidden md:block" />
       <Nav />
+
       <main className="relative z-10">
         <Hero />
         <div className="relative"><WavePath className="-mt-10 opacity-60" /></div>

@@ -112,11 +112,10 @@
 
   body {
     background-image:
-      radial-gradient(ellipse 80% 60% at 20% 10%, oklch(0.62 0.26 300 / 0.28), transparent 60%),
-      radial-gradient(ellipse 70% 50% at 80% 30%, oklch(0.55 0.28 295 / 0.22), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 50% 90%, oklch(0.5 0.28 290 / 0.18), transparent 60%);
-    background-attachment: fixed;
+      radial-gradient(ellipse 80% 60% at 20% 10%, oklch(0.62 0.26 300 / 0.22), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, oklch(0.5 0.28 290 / 0.16), transparent 60%);
   }
+
 
   ::selection {
     background: oklch(0.72 0.22 295 / 0.35);
@@ -136,26 +135,26 @@
 
 
 @utility glass {
-  background: var(--gradient-glass);
-  backdrop-filter: blur(28px) saturate(200%);
-  border: 1px solid oklch(1 0 0 / 0.14);
+  background: oklch(0.16 0.025 285 / 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid oklch(1 0 0 / 0.1);
   box-shadow: var(--shadow-glass);
   position: relative;
 }
 
 @utility glass-strong {
-  background: var(--gradient-glass-strong);
-  backdrop-filter: blur(40px) saturate(220%);
-  border: 1px solid oklch(1 0 0 / 0.18);
+  background: oklch(0.18 0.03 285 / 0.78);
+  backdrop-filter: blur(14px);
+  border: 1px solid oklch(1 0 0 / 0.14);
   box-shadow: var(--shadow-glass-strong);
   position: relative;
 }
 
 @utility glass-nav {
-  background: oklch(0.13 0.025 280 / 0.55);
-  backdrop-filter: blur(32px) saturate(200%);
-  border: 1px solid oklch(1 0 0 / 0.12);
-  box-shadow: 0 8px 32px -8px oklch(0 0 0 / 0.5), inset 0 1px 0 0 oklch(1 0 0 / 0.15);
+  background: oklch(0.11 0.025 280 / 0.82);
+  backdrop-filter: blur(12px);
+  border: 1px solid oklch(1 0 0 / 0.1);
+  box-shadow: 0 8px 32px -8px oklch(0 0 0 / 0.5), inset 0 1px 0 0 oklch(1 0 0 / 0.12);
 }
 
 @utility text-aurora {
@@ -186,11 +185,10 @@
   font-weight: 600;
   border-radius: 9999px;
   padding: 0.85rem 1.75rem;
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  transition: transform 0.2s, background 0.2s;
   box-shadow: 0 8px 24px -8px var(--brand-glow);
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 40px -8px var(--brand-glow);
     background: #9333ea;
   }
 }
@@ -203,19 +201,19 @@
 }
 
 @utility btn-glass {
-  background: oklch(1 0 0 / 0.06);
-  backdrop-filter: blur(20px);
+  background: oklch(1 0 0 / 0.08);
   border: 1px solid oklch(1 0 0 / 0.15);
   color: var(--color-foreground);
   font-weight: 500;
   border-radius: 9999px;
   padding: 0.85rem 1.75rem;
-  transition: all 0.3s;
+  transition: background 0.2s, border-color 0.2s;
   &:hover {
-    background: oklch(1 0 0 / 0.12);
+    background: oklch(1 0 0 / 0.14);
     border-color: oklch(1 0 0 / 0.25);
   }
 }
+
 
 @keyframes float-slow {
   0%, 100% { transform: translateY(0) translateX(0); }
