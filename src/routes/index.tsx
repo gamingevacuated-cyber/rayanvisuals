@@ -86,6 +86,7 @@ function Home() {
         <Skills />
         <Services />
         <Portfolio />
+        <FeaturedClient />
         <Achievements />
         <WhyHireMe />
         <Pricing />
