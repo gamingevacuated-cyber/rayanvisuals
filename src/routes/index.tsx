@@ -14,9 +14,10 @@ import { Testimonials } from "@/components/portfolio/Testimonials";
 import { FAQ } from "@/components/portfolio/FAQ";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
-import { BackToTop, FloatingParticles, LoadingScreen, MouseGlow, ScrollProgress } from "@/components/portfolio/Effects";
+import { BackToTop, LoadingScreen, ScrollProgress } from "@/components/portfolio/Effects";
 import { CustomCursor } from "@/components/portfolio/Cursor";
-import { NoiseFilter, GridLines, WavePath, OrbitRings } from "@/components/portfolio/SvgOrnaments";
+import { NoiseFilter, WavePath } from "@/components/portfolio/SvgOrnaments";
+
 
 const faqs = [
   { q: "What software do you use?", a: "Premiere Pro and After Effects." },
