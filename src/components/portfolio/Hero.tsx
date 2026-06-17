@@ -125,7 +125,7 @@ function FloatingTimeline() {
             <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Timeline</span>
             <div className="flex gap-1">
               {Array.from({ length: 24 }).map((_, i) => (
-                <div key={i} className="w-1 rounded-full bg-white/20" style={{ height: 4 + Math.abs(Math.sin(i)) * 14 }} />
+                <div key={i} className="w-1 rounded-full bg-white/20" style={{ height: `${(4 + Math.abs(Math.sin(i)) * 14).toFixed(2)}px` }} />
               ))}
             </div>
           </div>
