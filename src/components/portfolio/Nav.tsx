@@ -2,12 +2,11 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const links = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#services", label: "Services" },
+  { href: "#portfolio", label: "Work" },
+  { href: "#featured", label: "Projects" },
+  { href: "#services", label: "Process" },
+  { href: "#testimonials", label: "Testimonials" },
   { href: "#pricing", label: "Pricing" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export function Nav() {
@@ -54,10 +53,10 @@ export function Nav() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className={`rounded-full px-3 py-1.5 text-sm font-light transition hover:bg-white/5 ${
+                  className={`rounded-full px-3 py-1.5 text-sm font-medium transition hover:bg-white/5 ${
                     isActive ? "text-brand" : "text-muted-foreground hover:text-foreground"
                   }`}
-                  style={isActive ? { background: "rgba(59,130,246,0.1)" } : undefined}
+                  style={isActive ? { background: "rgba(109,93,254,0.12)" } : undefined}
                 >
                   {l.label}
                 </a>

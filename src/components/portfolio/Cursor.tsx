@@ -59,8 +59,8 @@ export function CustomCursor() {
         className="pointer-events-none fixed left-0 top-0 z-[200] h-2 w-2 rounded-full"
         style={{
           display: "none",
-          background: "#3B82F6",
-          boxShadow: "0 0 14px rgba(59,130,246,0.9), 0 0 28px rgba(59,130,246,0.5)",
+          background: "#6D5DFE",
+          boxShadow: "0 0 14px rgba(109,93,254,0.9), 0 0 28px rgba(168,85,247,0.5)",
           willChange: "transform",
         }}
       />
@@ -73,7 +73,7 @@ export function CustomCursor() {
           display: "none",
           width: 36,
           height: 36,
-          border: "1.5px solid rgba(59,130,246,0.6)",
+          border: "1.5px solid rgba(109,93,254,0.6)",
           willChange: "transform",
           transition: "width 0.2s ease, height 0.2s ease, background 0.2s ease",
         }}
@@ -82,7 +82,7 @@ export function CustomCursor() {
         .cursor-ring[data-hover="1"] {
           width: 56px !important;
           height: 56px !important;
-          background: rgba(59,130,246,0.12);
+          background: rgba(109,93,254,0.14);
         }
       `}</style>
     </>
