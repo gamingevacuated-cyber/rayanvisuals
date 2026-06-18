@@ -17,6 +17,7 @@ import { Footer } from "@/components/portfolio/Footer";
 import { BackToTop, LoadingScreen, ScrollProgress } from "@/components/portfolio/Effects";
 import { CustomCursor } from "@/components/portfolio/Cursor";
 import { NoiseFilter, WavePath } from "@/components/portfolio/SvgOrnaments";
+import { BackgroundFX } from "@/components/portfolio/BackgroundFX";
 
 
 const faqs = [
@@ -72,7 +73,9 @@ function Home() {
       <ScrollProgress />
       <CustomCursor />
       <NoiseFilter />
+      <BackgroundFX />
       <Nav />
+
 
       <main className="relative z-10">
         <Hero />
