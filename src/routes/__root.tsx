@@ -78,8 +78,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Rayan — Professional Video Editor | 7 Years Experience" },
       { name: "twitter:description", content: "Rayan is a professional video editor with 7+ years of experience in gaming, shorts, reels, and long-form content. Premiere Pro & After Effects specialist." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/3ab75752-453c-4472-a3e6-3782bc120eae" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/3ab75752-453c-4472-a3e6-3782bc120eae" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/Ygm06nV7fRXyN0mV1jpGa2L35Kw1/social-images/social-1781783757293-ChatGPT_Image_Jun_18,_2026,_04_55_36_PM.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/Ygm06nV7fRXyN0mV1jpGa2L35Kw1/social-images/social-1781783757293-ChatGPT_Image_Jun_18,_2026,_04_55_36_PM.webp" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
