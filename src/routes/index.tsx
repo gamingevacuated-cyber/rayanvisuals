@@ -6,7 +6,7 @@ import { About } from "@/components/portfolio/About";
 import { Skills } from "@/components/portfolio/Skills";
 import { Services } from "@/components/portfolio/Services";
 import { Portfolio } from "@/components/portfolio/Portfolio";
-import { FeaturedClient } from "@/components/portfolio/FeaturedClient";
+
 import { Achievements } from "@/components/portfolio/Achievements";
 import { WhyHireMe } from "@/components/portfolio/WhyHireMe";
 import { Pricing } from "@/components/portfolio/Pricing";
@@ -85,7 +85,7 @@ function Home() {
         <Skills />
         <Services />
         <Portfolio />
-        <FeaturedClient />
+        
         <Achievements />
         <WhyHireMe />
         <Pricing />
