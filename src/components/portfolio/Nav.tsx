@@ -2,11 +2,9 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const links = [
-  { href: "#portfolio", label: "Work" },
-  { href: "#featured", label: "Projects" },
-  { href: "#services", label: "Process" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#pricing", label: "Pricing" },
+  { href: "#home", label: "Home" },
+  { href: "#reel", label: "Reel" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function Nav() {
